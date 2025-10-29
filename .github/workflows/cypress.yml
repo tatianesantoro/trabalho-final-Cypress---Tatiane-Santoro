@@ -27,6 +27,8 @@ jobs:
           browser: chrome
           spec: 'cypress/e2e/**/*.cy.js'
           record: false
+          install: false 
+          cache-key: false
 
       - name: Upload Cypress screenshots
         if: failure()  # Upload apenas se os testes falharem
