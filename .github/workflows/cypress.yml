@@ -29,15 +29,17 @@ jobs:
           record: false
 
       - name: Upload Cypress screenshots
-        if: always()
+        if: failure()  # Upload apenas se os testes falharem
         uses: actions/upload-artifact@v4
         with:
           name: cypress-screenshots
           path: cypress/screenshots
+          if-no-files-found: ignore
 
       - name: Upload Cypress videos
-        if: always()
+        if: failure()  # Upload apenas se os testes falharem
         uses: actions/upload-artifact@v4
         with:
           name: cypress-videos
           path: cypress/videos
+          if-no-files-found: ignore 
