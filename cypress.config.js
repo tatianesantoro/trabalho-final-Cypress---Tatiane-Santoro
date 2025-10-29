@@ -21,8 +21,11 @@ module.exports = defineConfig({
     viewportWidth: 1280,
     viewportHeight: 720,
     video: true,
+    videoCompression: 32,
+    videoUploadOnPasses: true,
     screenshotOnRunFailure: true,
     videosFolder: 'cypress/videos',
     screenshotsFolder: 'cypress/screenshots',
+    trashAssetsBeforeRuns: true,
   },
 })

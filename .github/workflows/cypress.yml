@@ -29,6 +29,18 @@ jobs:
           record: false
           install: false 
           cache-key: false
+        env:
+          CYPRESS_VIDEO: true
+
+      - name: List generated artifacts
+        if: always()
+        run: |
+          echo "=== Cypress Reports ==="
+          ls -la cypress/reports || echo "No reports found"
+          echo "=== Cypress Videos ==="
+          ls -la cypress/videos || echo "No videos found"
+          echo "=== Cypress Screenshots ==="
+          ls -la cypress/screenshots || echo "No screenshots found"
 
       - name: Upload Cypress screenshots
         if: failure()
