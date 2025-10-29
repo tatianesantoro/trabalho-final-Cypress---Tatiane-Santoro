@@ -1,4 +1,4 @@
-name: CI — Cypress E2E Tests
+﻿name: CI  Cypress E2E Tests
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
           cache-key: false
 
       - name: Upload Cypress screenshots
-        if: failure()  # Upload apenas se os testes falharem
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: cypress-screenshots
@@ -39,18 +39,20 @@ jobs:
           if-no-files-found: ignore
 
       - name: Upload Cypress videos
-        if: failure()  # Upload apenas se os testes falharem
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: cypress-videos
           path: cypress/videos
-          if-no-files-found: ignore 
+          if-no-files-found: ignore
 
-      - uses: actions/upload-artifact@v4  
+      - name: Upload all test artifacts
         if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
         with:
           name: relatorios
-          path:
+          path: |
             cypress/reports
             cypress/screenshots
             cypress/videos
+          if-no-files-found: ignore
