@@ -1,6 +1,9 @@
 node_modules
-package-lock.json
 
-cypress/sceenshots
-cypress/videos
-cypress/reports
+# Cypress artifacts (conteúdo ignorado, mas diretórios rastreados via .gitkeep)
+cypress/screenshots/*
+!cypress/screenshots/.gitkeep
+cypress/videos/*
+!cypress/videos/.gitkeep
+cypress/reports/*
+!cypress/reports/.gitkeep

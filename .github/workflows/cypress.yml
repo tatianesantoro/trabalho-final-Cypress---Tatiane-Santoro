@@ -46,13 +46,14 @@ jobs:
           path: cypress/videos
           if-no-files-found: ignore
 
-      - name: Upload all test artifacts
-        if: ${{ !cancelled() }}
+      - name: Upload test reports and artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: relatorios
+          name: relatorios-cypress
           path: |
             cypress/reports
             cypress/screenshots
             cypress/videos
-          if-no-files-found: ignore
+          if-no-files-found: warn
+          retention-days: 30
