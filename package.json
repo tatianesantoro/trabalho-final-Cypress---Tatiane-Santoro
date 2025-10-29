@@ -1,7 +1,7 @@
 {
-  "name": "trabalho-final-1.2",
+  "name": "trabalho final Cypress - Tatiane Santoro",
   "version": "1.0.0",
-  "description": "Cypress automation tests for automationexercise.com",
+  "description": "Trabalho final Cypress",
   "main": "index.js",
   "scripts": {
     "cy:open": "cypress open",
