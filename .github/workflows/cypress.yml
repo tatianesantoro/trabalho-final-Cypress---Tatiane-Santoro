@@ -50,7 +50,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: relatorios-cypress
+          name: relatorios-cypress-${{ github.run_number }}-${{ github.run_attempt }}
           path: |
             cypress/reports
             cypress/screenshots
