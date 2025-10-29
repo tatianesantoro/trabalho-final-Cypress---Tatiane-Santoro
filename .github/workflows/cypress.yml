@@ -1,4 +1,4 @@
-﻿name: CI  Cypress E2E Tests
+﻿name: Trabalho Tatiane
 
 on:
   push:
